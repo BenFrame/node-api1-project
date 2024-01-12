@@ -69,7 +69,7 @@ describe('server.js', () => {
     })
     describe('[GET] /api/users/:id', () => {
       test('[7] responds with the correct user', async () => {
-        let [{ id }] = await User.find()
+        let [{ id }] = await User.find();
         let res = await request(server).get(`/api/users/${id}`)
         expect(res.body).toMatchObject(initialUsers[0]);
 
